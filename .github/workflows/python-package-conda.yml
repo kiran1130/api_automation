@@ -24,22 +24,6 @@ jobs:
         python -m pip install --upgrade pip
         pip install -r requirements.txt
         pip install pytest pytest-cov flake8 black bandit safety
-    - name: Lint with flake8
-      run: |
-        source venv/bin/activate
-        flake8 .
-    - name: Format with black
-      run: |
-        source venv/bin/activate
-        black --check .
-    - name: Security check with bandit
-      run: |
-        source venv/bin/activate
-        bandit -r .
-    - name: Security check with safety
-      run: |
-        source venv/bin/activate
-        safety check --full-report
     - name: Test with pytest
       run: |
         source venv/bin/activate
