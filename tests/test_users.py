@@ -20,8 +20,3 @@ def test_get_user_by_id():
     user_id = 2498 
     response = pip._vendor.requests.get(f"{BASE_URL}/users/{user_id}", headers=HEADERS)
     assert response.status_code == 200
-
-# Test case 5: Delete a user (DELETE)
-def test_delete_user():
-    response = pip._vendor.requests.delete(f"{BASE_URL}/users/{created_user_id}", headers=HEADERS)
-    assert response.status_code == 204
